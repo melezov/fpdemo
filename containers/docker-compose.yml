@@ -1,0 +1,10 @@
+postgres:
+  build: postgres
+  container_name: fpdemo-postgres_1
+  ports:
+    - "fpdemo-postgres:5432:5432"
+  hostname: fpdemo
+  domainname: mentat-labs.com
+  restart: always
+  stdin_open: true
+  tty: true
