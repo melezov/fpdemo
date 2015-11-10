@@ -11,7 +11,7 @@ object NotesScala extends App {
   val locator = Boot.configure("jdbc:postgresql://fpdemo-postgres:5432/fpdb?user=fpuser&password=fppass")
 
   val bucket = new Bucket()
-    .setName("moje")
+    .setName("Scala Bucket")
 
   val bucketRepository = locator.resolve(classOf[BucketRepository])
   bucketRepository.insert(bucket)
@@ -32,7 +32,7 @@ object NotesScala extends App {
   val noteRepository = locator.resolve(classOf[NoteRepository])
   noteRepository.insert(notes)
 
-  val spec = new Note.nadjiPoBucketNameu("moje")
+  val spec = new Note.nadjiPoBucketNameu("Scala Bucket")
   for (n <- noteRepository.search(spec, 2, 5)) {
     println(n)
   }

@@ -31,7 +31,7 @@ mkdir temp\source\revenj.java
 
 :: Create model jar, apply migration
 echo Compiling model to temp\output\%MODEL_JAR% ...
-java -jar dsl-clc-1.5.0.jar ^
+java -jar dsl-clc.jar ^
   dsl=dsl ^
   temp=temp\compile ^
   compiler%COMPILER_DOWNLOADED% ^

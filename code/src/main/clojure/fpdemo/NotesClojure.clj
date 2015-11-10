@@ -14,7 +14,7 @@
   (.insert bucketRepository bucket)
 
   (def task1 (doto (new Task "ime1" "puno texta" Status/Pending)))
-  (def task2 (doto (new Task "ime2" "puno texta" Status/Pending)))
+  (def task2 (doto (new Task "ime2" "puno texta" Status/Finished)))
 
   (def notes
     (for [i (range 0 3)]
@@ -31,7 +31,7 @@
   (.insert noteRepository notes)
 
   (def spec
-    (new fpdemo.notes.Note$nadjiPoBucketNameu "moje"))
+    (new fpdemo.notes.Note$nadjiPoBucketNameu "Clojure Bucket"))
 
   (doseq [n (.search noteRepository spec (int 2) (int 5))]
     (println n))

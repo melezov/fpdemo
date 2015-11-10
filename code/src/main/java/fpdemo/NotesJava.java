@@ -14,7 +14,7 @@ class NotesJava {
         final ServiceLocator locator = Boot.configure("jdbc:postgresql://fpdemo-postgres:5432/fpdb?user=fpuser&password=fppass");
 
         final Bucket bucket = new Bucket()
-            .setName("moje");
+            .setName("Java Bucket");
 
         final PersistableRepository<Bucket> bucketRepository = locator.resolve(BucketRepository.class);
         bucketRepository.insert(bucket);
@@ -36,7 +36,7 @@ class NotesJava {
         final PersistableRepository<Note> noteRepository = locator.resolve(NoteRepository.class);
         noteRepository.insert(notes);
 
-        final Specification<Note> spec = new Note.nadjiPoBucketNameu("moje");
+        final Specification<Note> spec = new Note.nadjiPoBucketNameu("Java Bucket");
         for (final Note n : noteRepository.search(spec, 2, 5)) {
             System.out.println(n);
         }
